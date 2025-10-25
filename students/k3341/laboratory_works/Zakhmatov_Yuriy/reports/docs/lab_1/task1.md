@@ -80,6 +80,8 @@ if __name__ == '__main__':
 ---
 4. Запускаем скрипт
 ![img.png](screenshots/img.png)
+
 ---
+
 5. Скрин с сервера
 ![img.png](screenshots/img1.png)
