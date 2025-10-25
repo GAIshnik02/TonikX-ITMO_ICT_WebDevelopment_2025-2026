@@ -2,7 +2,7 @@
 {% block title %}Мои оценки{% endblock %}
 
 {% block content %}
-<h2>Мои оценки</h2>
+<h2>📝 Мои оценки</h2>
 
 {% for sub in submissions %}
 <div class="card mb-3 border-{% if sub.status == 'graded' %}success{% elif sub.status == 'late' %}danger{% elif sub.status == 'submitted' %}info{% else %}warning{% endif %}">

@@ -21,26 +21,41 @@
         <p class="card-text">{{ hw.description|truncatechars:250 }}</p>
         <p class="text-muted mb-2">🕓 Срок сдачи: <strong>{{ hw.due_date }}</strong></p>
 
-        <!-- Статус Сдачи -->
+        <!-- СТАТУС СДАЧИ - САМЫЙ ПРОСТОЙ ВАРИАНТ -->
         {% if user.is_authenticated %}
-  {% with user_submissions=hw.submission_set.filter student=user %}
-    {% with last_submission=user_submissions.last %}
-      {% if last_submission %}
-        <div class="alert alert-{% if last_submission.status == 'graded' %}success{% elif last_submission.status == 'late' %}danger{% else %}info{% endif %} mb-3">
-          {{ last_submission.get_status_display }}
-          {% if last_submission.grade %}
-            | Оценка: <strong>{{ last_submission.grade }}</strong>
-          {% endif %}
-          | {{ last_submission.submitted_at|date:"d.m.Y H:i" }}
-        </div>
-      {% else %}
-        <div class="alert alert-warning mb-3">
-          ⏳ Не сдано
-        </div>
-      {% endif %}
-    {% endwith %}
-  {% endwith %}
-{% endif %}
+          {% with has_submission=False %}
+            {% for submission in hw.submission_set.all %}
+              {% if submission.student.id == user.id %}
+                {% if forloop.last %}
+                  <div class="alert alert-{% if submission.status == 'graded' %}success{% elif submission.status == 'late' %}danger{% else %}info{% endif %} mb-3">
+                    {{ submission.get_status_display }}
+                    {% if submission.grade %}
+                      | Оценка: <strong>{{ submission.grade }}</strong>
+                    {% endif %}
+                    | {{ submission.submitted_at|date:"d.m.Y H:i" }}
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          {% endwith %}
+
+          <!-- Если не нашли ни одного сабмишна для пользователя -->
+          {% for submission in hw.submission_set.all %}
+            {% if submission.student.id == user.id %}
+              <!-- Есть сабмишн, ничего не делаем -->
+            {% else %}
+              {% if forloop.last %}
+                <div class="alert alert-warning mb-3">
+                  ⏳ Не сдано
+                </div>
+              {% endif %}
+            {% endif %}
+          {% empty %}
+            <div class="alert alert-warning mb-3">
+              ⏳ Не сдано
+            </div>
+          {% endfor %}
+        {% endif %}
 
         {% if user.is_authenticated %}
           <a href="{% url 'submit_homework' hw.id %}" class="btn btn-success btn-lg w-100 py-3 shadow">
@@ -61,7 +76,7 @@
     </div>
   {% endfor %}
 
-  <!-- Пагинация -->
+  <!-- Пагинация (без изменений) -->
   {% if page_obj.paginator.num_pages > 1 %}
   <nav aria-label="Навигация по страницам">
     <ul class="pagination justify-content-center mt-4">

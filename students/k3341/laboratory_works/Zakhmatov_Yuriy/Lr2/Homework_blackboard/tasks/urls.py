@@ -5,5 +5,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('register/', views.register, name='register'),
     path('submit/<int:homework_id>/', views.submit_homework, name='submit_homework'),
-    path('grades/', views.grades, name='grades'),
+    path('my-grades/', views.my_grades, name='my_grades'),
+    path('class-grades/', views.class_grades, name='class_grades'),
 ]
