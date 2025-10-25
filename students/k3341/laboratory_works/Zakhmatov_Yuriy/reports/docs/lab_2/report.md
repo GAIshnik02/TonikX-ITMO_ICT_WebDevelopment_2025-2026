@@ -28,7 +28,7 @@
  
 ## Выполнение работы
 
-1. Создание БД нашего сайта:
+##### Создание БД нашего сайта:
 
 ~~~python
 from django.db import models
@@ -101,11 +101,11 @@ class Submission(models.Model):
         return f"{self.student.username} - {self.homework.subject.name} ({self.get_status_display()})"
 ~~~
 
-2. Миграция БД
+##### Миграция БД
 
 ![img.png](screenshots%2Fimg.png)
 
-3. Создаем админку
+##### Создаем админку
 
 ```python
 from django.contrib import admin
@@ -151,7 +151,7 @@ class SubmissionAdmin(admin.ModelAdmin):
     delete_old_submissions.short_description = "Удалить все кроме последних сдач"
 ```
 
-4. Создаем представления
+##### Создаем представления
 
 ```python
 from django.http import HttpResponseRedirect
@@ -289,7 +289,7 @@ def class_grades(request):
     })
 ```
 
-5. Создаем urls
+##### Создаем urls
 
 ```python
 from django.urls import path

@@ -7,6 +7,9 @@ nav:
       - Задание 3: lab_1/task3.md
       - Задание 4: lab_1/task4.md
       - Задание 5: lab_1/task5.md
+
+  - Лаба 2:
+      - Отчет: lab_2/report.md
 theme:
   name: material
   language: ru
