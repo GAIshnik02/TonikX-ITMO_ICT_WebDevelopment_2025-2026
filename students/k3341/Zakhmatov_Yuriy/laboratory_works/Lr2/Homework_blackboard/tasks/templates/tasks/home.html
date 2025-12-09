@@ -21,7 +21,7 @@
         <p class="card-text">{{ hw.description|truncatechars:250 }}</p>
         <p class="text-muted mb-2">🕓 Срок сдачи: <strong>{{ hw.due_date }}</strong></p>
 
-        <!-- СТАТУС СДАЧИ - САМЫЙ ПРОСТОЙ ВАРИАНТ -->
+        <!-- СТАТУС СДАЧИ -->
         {% if user.is_authenticated %}
           {% with has_submission=False %}
             {% for submission in hw.submission_set.all %}
@@ -76,7 +76,7 @@
     </div>
   {% endfor %}
 
-  <!-- Пагинация (без изменений) -->
+  <!-- Пагинация -->
   {% if page_obj.paginator.num_pages > 1 %}
   <nav aria-label="Навигация по страницам">
     <ul class="pagination justify-content-center mt-4">
