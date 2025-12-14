@@ -10,6 +10,10 @@ nav:
 
   - Лаба 2:
       - Отчет: lab_2/report.md
+
+  - Лаба 3:
+      - Отчет: lab_3/report.md
+
 theme:
   name: material
   language: ru
