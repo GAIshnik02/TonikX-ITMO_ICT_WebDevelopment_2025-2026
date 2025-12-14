@@ -1,0 +1,1734 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../lab_2/report/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Отчет - Лабы по вебу</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="../.." title="Лабы по вебу" class="md-header__button md-logo" aria-label="Лабы по вебу" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Лабы по вебу
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Отчет
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Лабы по вебу" class="md-nav__button md-logo" aria-label="Лабы по вебу" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Лабы по вебу
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Лаба 1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Лаба 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab_1/task1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Задание 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab_1/task2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Задание 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab_1/task3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Задание 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab_1/task4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Задание 4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab_1/task5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Задание 5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Лаба 2
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Лаба 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab_2/report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Отчет
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Лаба 3
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Лаба 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Отчет
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Отчет
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#django-djangorestframework" class="md-nav__link">
+    <span class="md-ellipsis">
+      РЕАЛИЗАЦИЯ СЕРВЕРНОЙ ЧАСТИ ПРИЛОЖЕНИЯ СРЕДСТВАМИ DJANGO И DJANGORESTFRAMEWORK
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Выполнение работы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Выполнение работы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      Выполнение практической работы 3.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Выполнение лабораторной работы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Выполнение лабораторной работы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Водители (Drivers)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Классы водителей (Driver Classes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bus-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Типы автобусов (Bus Types)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Автобусы (Buses)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Маршруты (Routes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-shifts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Смены водителей (Work Shifts)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Долг по литкоду
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#django-djangorestframework" class="md-nav__link">
+    <span class="md-ellipsis">
+      РЕАЛИЗАЦИЯ СЕРВЕРНОЙ ЧАСТИ ПРИЛОЖЕНИЯ СРЕДСТВАМИ DJANGO И DJANGORESTFRAMEWORK
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Выполнение работы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Выполнение работы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      Выполнение практической работы 3.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Выполнение лабораторной работы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Выполнение лабораторной работы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Водители (Drivers)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#driver-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Классы водителей (Driver Classes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bus-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Типы автобусов (Bus Types)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Автобусы (Buses)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Маршруты (Routes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-shifts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Смены водителей (Work Shifts)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Долг по литкоду
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2">Лабораторная работа 2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="django-djangorestframework">РЕАЛИЗАЦИЯ СЕРВЕРНОЙ ЧАСТИ ПРИЛОЖЕНИЯ СРЕДСТВАМИ DJANGO И DJANGORESTFRAMEWORK<a class="headerlink" href="#django-djangorestframework" title="Permanent link">&para;</a></h2>
+<p><strong>Цель</strong>: овладеть практическими навыками и умениями реализации web-сервисов
+средствами Django.</p>
+<p><strong>Практическое задание:</strong> Реализовать сайт, используя фреймворк Django 3, Django REST Framework, Djoser и
+СУБД PostgreSQL *, в соответствии с вариантом задания лабораторной работы.</p>
+<p><strong>Вариант:</strong> 9 </p>
+<p><em>Создать программную систему, предназначенную для диспетчера автобусного
+парка частной транспортной фирмы. Фима обслуживает несколько коммерческих
+маршрутов. Такая система должна обеспечивать хранение сведений о водителях, о
+маршрутах и характеристиках автобусов.
+Каждый водитель характеризуется паспортными данными, классом, стажем
+работы и окладом, причем оклад зависит от класса и стажа работы.
+Маршрут автобуса характеризуется номером маршрута, названием начального и
+конечного пункта движения, временем начала и конца движения, интервалом движения и
+протяженностью в минутах (время движения от кольца до кольца). Характеристиками
+автобуса являются: номер государственной регистрации автобуса, его тип и
+вместимость, причем вместимость автобуса зависит от его типа.
+Каждый водитель закреплен за определенным автобусом и работает на
+определенном маршруте, но в случае поломки своего автобуса или болезни другого
+водителя может пересесть на другую машину.
+В базе должен храниться график работы водителей.
+Необходимо предусмотреть возможность корректировки БД в случаях
+поступления на работу нового водителя, списания старого автобуса, введения нового
+маршрута или изменения старого и т.п.</em></p>
+<p><em>Диспетчеру автопарка могут потребоваться следующие сведения:</em></p>
+<p><em> Список водителей, работающих на определенном маршруте с указанием
+графика их работы?</em></p>
+<p><em> Когда начинается и заканчивается движение автобусов на каждом маршруте?</em></p>
+<p><em> Какова общая протяженность маршрутов, обслуживаемых автопарком?</em></p>
+<p><em> Какие автобусы не вышли на линию в заданный день и по какой причине
+(неисправность, отсутствие водителя)?</em></p>
+<p><em> Сколько водителей каждого класса работает в автопарке?</em></p>
+<p><em>Необходимо предусмотреть возможность выдачи отчета по автопарку,
+сгруппированного по типам автобусов, с указанием маршрутов, обслуживаемых
+автобусами каждого типа. Для маршрутов должны быть указаны все характеристики,
+включая списки автобусов и водителей, обслуживающих каждый маршрут. Отчет
+должен содержать сведения о суммарной протяженности обслуживаемых маршрутов,
+о количестве имеющихся в автопарке автобусов каждого типа, о количестве водителей,
+их среднем возрасте и стаже.</em></p>
+<hr />
+<h2 id="_1">Выполнение работы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="31">Выполнение практической работы 3.1<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>Создадим 3 скрипта для оболочки Django:</p>
+<p>Для создания данных:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">autoapp.models</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="c1"># Создаем владельцев</span>
+<span class="n">owners_data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;Иванов&quot;</span><span class="p">,</span> <span class="s2">&quot;Олег&quot;</span><span class="p">,</span> <span class="s2">&quot;1980-05-15&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Петров&quot;</span><span class="p">,</span> <span class="s2">&quot;Сергей&quot;</span><span class="p">,</span> <span class="s2">&quot;1975-11-23&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Сидоров&quot;</span><span class="p">,</span> <span class="s2">&quot;Олег&quot;</span><span class="p">,</span> <span class="s2">&quot;1990-03-10&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Кузнецова&quot;</span><span class="p">,</span> <span class="s2">&quot;Мария&quot;</span><span class="p">,</span> <span class="s2">&quot;1985-07-20&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Смирнов&quot;</span><span class="p">,</span> <span class="s2">&quot;Алексей&quot;</span><span class="p">,</span> <span class="s2">&quot;1992-09-30&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Васильев&quot;</span><span class="p">,</span> <span class="s2">&quot;Дмитрий&quot;</span><span class="p">,</span> <span class="s2">&quot;1978-12-05&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">owners</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">birth_date</span> <span class="ow">in</span> <span class="n">owners_data</span><span class="p">:</span>
+    <span class="n">owner</span> <span class="o">=</span> <span class="n">Owner</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">last_name</span><span class="o">=</span><span class="n">last_name</span><span class="p">,</span>
+        <span class="n">first_name</span><span class="o">=</span><span class="n">first_name</span><span class="p">,</span>
+        <span class="n">birth_date</span><span class="o">=</span><span class="n">birth_date</span>
+    <span class="p">)</span>
+    <span class="n">owners</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">owner</span><span class="p">)</span>
+
+<span class="c1"># Создаем автомобили</span>
+<span class="n">cars_data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;A123BC77&quot;</span><span class="p">,</span> <span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="s2">&quot;Camry&quot;</span><span class="p">,</span> <span class="s2">&quot;Красный&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;B234CD99&quot;</span><span class="p">,</span> <span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="s2">&quot;Corolla&quot;</span><span class="p">,</span> <span class="s2">&quot;Синий&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;C345DE11&quot;</span><span class="p">,</span> <span class="s2">&quot;BMW&quot;</span><span class="p">,</span> <span class="s2">&quot;X5&quot;</span><span class="p">,</span> <span class="s2">&quot;Черный&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;D456EF22&quot;</span><span class="p">,</span> <span class="s2">&quot;Lada&quot;</span><span class="p">,</span> <span class="s2">&quot;Vesta&quot;</span><span class="p">,</span> <span class="s2">&quot;Белый&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;E567FG33&quot;</span><span class="p">,</span> <span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="s2">&quot;RAV4&quot;</span><span class="p">,</span> <span class="s2">&quot;Красный&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;F678GH44&quot;</span><span class="p">,</span> <span class="s2">&quot;Kia&quot;</span><span class="p">,</span> <span class="s2">&quot;Rio&quot;</span><span class="p">,</span> <span class="s2">&quot;Серый&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">cars</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">plate</span><span class="p">,</span> <span class="n">brand</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">cars_data</span><span class="p">:</span>
+    <span class="n">car</span> <span class="o">=</span> <span class="n">Car</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">license_plate</span><span class="o">=</span><span class="n">plate</span><span class="p">,</span>
+        <span class="n">brand</span><span class="o">=</span><span class="n">brand</span><span class="p">,</span>
+        <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">color</span>
+    <span class="p">)</span>
+    <span class="n">cars</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
+
+<span class="c1"># Создаем удостоверения для владельцев</span>
+<span class="n">license_data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;1234567890&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-06-10&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;2345678901&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;2018-03-15&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;3456789012&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-11-20&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;4567890123&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;2017-09-05&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;5678901234&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;2019-04-25&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;6789012345&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;2016-12-30&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">owner</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">owners</span><span class="p">):</span>
+    <span class="n">License</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">owner</span><span class="o">=</span><span class="n">owner</span><span class="p">,</span>
+        <span class="n">number</span><span class="o">=</span><span class="n">license_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">license_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+        <span class="n">issue_date</span><span class="o">=</span><span class="n">license_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+    <span class="p">)</span>
+
+<span class="c1"># Назначаем автомобили владельцам (от 1 до 3 машин на владельца)</span>
+<span class="n">ownerships</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span>      <span class="c1"># Иванов Олег - Toyota Camry, Toyota Corolla</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">]),</span>         <span class="c1"># Петров Сергей - BMW X5</span>
+    <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]),</span>      <span class="c1"># Сидоров Олег - Lada Vesta, Toyota RAV4</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]),</span>   <span class="c1"># Кузнецова Мария - Toyota Camry, BMW X5, Kia Rio</span>
+    <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span>      <span class="c1"># Смирнов Алексей - Toyota Corolla, Lada Vesta</span>
+    <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]),</span>      <span class="c1"># Васильев Дмитрий - Toyota RAV4, Kia Rio</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">owner_idx</span><span class="p">,</span> <span class="n">car_indices</span> <span class="ow">in</span> <span class="n">ownerships</span><span class="p">:</span>
+    <span class="n">owner</span> <span class="o">=</span> <span class="n">owners</span><span class="p">[</span><span class="n">owner_idx</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">car_idx</span> <span class="ow">in</span> <span class="n">car_indices</span><span class="p">:</span>
+        <span class="n">car</span> <span class="o">=</span> <span class="n">cars</span><span class="p">[</span><span class="n">car_idx</span><span class="p">]</span>
+        <span class="n">start_year</span> <span class="o">=</span> <span class="mi">2015</span> <span class="o">+</span> <span class="n">car_idx</span>  <span class="c1"># Для разнообразия дат</span>
+        <span class="n">Ownership</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+            <span class="n">owner</span><span class="o">=</span><span class="n">owner</span><span class="p">,</span>
+            <span class="n">car</span><span class="o">=</span><span class="n">car</span><span class="p">,</span>
+            <span class="n">start_date</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">start_year</span><span class="si">}</span><span class="s2">-01-01&quot;</span><span class="p">,</span>
+            <span class="n">end_date</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">start_year</span><span class="o">+</span><span class="mi">3</span><span class="si">}</span><span class="s2">-12-31&quot;</span> <span class="k">if</span> <span class="n">start_year</span> <span class="o">&lt;</span> <span class="mi">2020</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Данные успешно созданы!&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>Для запросов:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">autoapp.models</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># 1. Все машины марки &quot;Toyota&quot;</span>
+<span class="n">toyota_cars</span> <span class="o">=</span> <span class="n">Car</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">brand</span><span class="o">=</span><span class="s2">&quot;Toyota&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Toyota cars:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">toyota_cars</span><span class="p">))</span>
+
+<span class="c1"># 2. Все водители с именем &quot;Олег&quot;</span>
+<span class="n">oleg_owners</span> <span class="o">=</span> <span class="n">Owner</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s2">&quot;Олег&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Owners named Oleg:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">oleg_owners</span><span class="p">))</span>
+
+<span class="c1"># 3. Получить случайного владельца и его удостоверение</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="n">random_owner</span> <span class="o">=</span> <span class="n">Owner</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;?&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="n">license</span> <span class="o">=</span> <span class="n">License</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">owner</span><span class="o">=</span><span class="n">random_owner</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Random owner: </span><span class="si">{</span><span class="n">random_owner</span><span class="si">}</span><span class="s2">, License: </span><span class="si">{</span><span class="n">license</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 4. Все владельцы красных машин</span>
+<span class="n">red_car_owners</span> <span class="o">=</span> <span class="n">Owner</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ownerships__car__color</span><span class="o">=</span><span class="s2">&quot;Красный&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Owners of red cars:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">red_car_owners</span><span class="p">))</span>
+
+<span class="c1"># 5. Все владельцы, чье владение машиной началось с 2017 года</span>
+<span class="n">owners_from_2017</span> <span class="o">=</span> <span class="n">Owner</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ownerships__start_date__year</span><span class="o">=</span><span class="mi">2017</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Owners from 2017:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">owners_from_2017</span><span class="p">))</span>
+</code></pre></div>
+
+<p>И для агрегации:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.db.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Count</span><span class="p">,</span> <span class="n">Min</span><span class="p">,</span> <span class="n">Max</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">autoapp.models</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># 1. Самая старая дата выдачи удостоверения</span>
+<span class="n">oldest_license</span> <span class="o">=</span> <span class="n">License</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">oldest</span><span class="o">=</span><span class="n">Min</span><span class="p">(</span><span class="s1">&#39;issue_date&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Oldest license issue date:&quot;</span><span class="p">,</span> <span class="n">oldest_license</span><span class="p">[</span><span class="s1">&#39;oldest&#39;</span><span class="p">])</span>
+
+<span class="c1"># 2. Самая поздняя дата владения машиной (для модели &quot;Camry&quot;)</span>
+<span class="n">latest_ownership</span> <span class="o">=</span> <span class="n">Ownership</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">car__model</span><span class="o">=</span><span class="s2">&quot;Camry&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">latest</span><span class="o">=</span><span class="n">Max</span><span class="p">(</span><span class="s1">&#39;start_date&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Latest ownership for Camry:&quot;</span><span class="p">,</span> <span class="n">latest_ownership</span><span class="p">[</span><span class="s1">&#39;latest&#39;</span><span class="p">])</span>
+
+<span class="c1"># 3. Количество машин у каждого владельца</span>
+<span class="n">owners_with_car_count</span> <span class="o">=</span> <span class="n">Owner</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">car_count</span><span class="o">=</span><span class="n">Count</span><span class="p">(</span><span class="s1">&#39;ownerships__car&#39;</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">owner</span> <span class="ow">in</span> <span class="n">owners_with_car_count</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">owner</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">owner</span><span class="o">.</span><span class="n">car_count</span><span class="si">}</span><span class="s2"> cars&quot;</span><span class="p">)</span>
+
+<span class="c1"># 4. Количество машин каждой марки</span>
+<span class="n">cars_by_brand</span> <span class="o">=</span> <span class="n">Car</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s1">&#39;brand&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="n">Count</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">cars_by_brand</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;brand&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 5. Сортировка владельцев по дате выдачи удостоверения (самые старые первыми)</span>
+<span class="n">owners_sorted</span> <span class="o">=</span> <span class="n">Owner</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">licenses__isnull</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;licenses__issue_date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Owners sorted by license issue date:&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">owners_sorted</span><span class="p">))</span>
+</code></pre></div>
+
+<p>Результат исполнения скриптов:</p>
+<p><img alt="img.png" src="../screenshots/img.png" /></p>
+<h3 id="_2">Выполнение лабораторной работы<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Для начала написал БД: <em>models.py</em></p>
+<div class="codehilite"><pre><span></span><code>    <span class="kn">from</span><span class="w"> </span><span class="nn">decimal</span><span class="w"> </span><span class="kn">import</span> <span class="n">Decimal</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.core.validators</span><span class="w"> </span><span class="kn">import</span> <span class="n">MinValueValidator</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">BusType</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">capacity</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">MinValueValidator</span><span class="p">(</span><span class="mi">1</span><span class="p">)])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Bus</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">registration_number</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">bus_type</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">BusType</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">PROTECT</span><span class="p">)</span>
+    <span class="n">is_active</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">registration_number</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Route</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">start_point</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">end_point</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TimeField</span><span class="p">()</span>
+    <span class="n">end_time</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TimeField</span><span class="p">()</span>
+    <span class="n">interval_minutes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">()</span>
+    <span class="n">duration_minutes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">start_point</span><span class="si">}</span><span class="s2"> – </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">end_point</span><span class="si">}</span><span class="s2">&quot;</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">DriverClass</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">base_salary</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DecimalField</span><span class="p">(</span><span class="n">max_digits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">decimal_places</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Driver</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">first_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">last_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">passport_number</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">birth_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+    <span class="n">driver_class</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">DriverClass</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">PROTECT</span><span class="p">)</span>
+    <span class="n">experience_years</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">last_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">salary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">driver_class</span><span class="o">.</span><span class="n">base_salary</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">experience_years</span> <span class="o">*</span> <span class="n">Decimal</span><span class="p">(</span><span class="mf">0.05</span><span class="p">))</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">WorkShift</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">driver</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Driver</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">bus</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Bus</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">PROTECT</span><span class="p">)</span>
+    <span class="n">route</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Route</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">PROTECT</span><span class="p">)</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TimeField</span><span class="p">()</span>
+    <span class="n">end_time</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TimeField</span><span class="p">()</span>
+    <span class="n">absence_reason</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+        <span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+        <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">help_text</span><span class="o">=</span><span class="s2">&quot;Причина, если автобус не вышел на линию&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">unique_together</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;driver&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;start_time&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">driver</span><span class="si">}</span><span class="s2"> – </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">route</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="si">}</span><span class="s2">)&quot;</span>
+</code></pre></div>
+
+<p>Затем написал <em>serializers.py</em> для сериализации:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework</span><span class="w"> </span><span class="kn">import</span> <span class="n">serializers</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DriverClass</span><span class="p">,</span> <span class="n">Driver</span><span class="p">,</span>
+    <span class="n">BusType</span><span class="p">,</span> <span class="n">Bus</span><span class="p">,</span>
+    <span class="n">Route</span><span class="p">,</span> <span class="n">WorkShift</span>
+<span class="p">)</span>
+
+<span class="c1"># Класс водителя</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DriverClassSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">DriverClass</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span>
+
+<span class="c1"># Водители</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DriverSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+    <span class="n">driver_class</span> <span class="o">=</span> <span class="n">DriverClassSerializer</span><span class="p">(</span><span class="n">read_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">driver_class_id</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">PrimaryKeyRelatedField</span><span class="p">(</span>
+        <span class="n">queryset</span><span class="o">=</span><span class="n">DriverClass</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span>
+        <span class="n">source</span><span class="o">=</span><span class="s1">&#39;driver_class&#39;</span><span class="p">,</span>
+        <span class="n">write_only</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">salary</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">DecimalField</span><span class="p">(</span>
+        <span class="n">max_digits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">decimal_places</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">read_only</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Driver</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;first_name&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;last_name&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;passport_number&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;birth_date&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;experience_years&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;driver_class&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;driver_class_id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;salary&#39;</span>
+        <span class="p">)</span>
+
+<span class="c1"># Типы автобусов</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">BusTypeSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">BusType</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span>
+
+<span class="c1"># Автобусы</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">BusSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+    <span class="n">bus_type</span> <span class="o">=</span> <span class="n">BusTypeSerializer</span><span class="p">(</span><span class="n">read_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">bus_type_id</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">PrimaryKeyRelatedField</span><span class="p">(</span>
+        <span class="n">queryset</span><span class="o">=</span><span class="n">BusType</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span>
+        <span class="n">source</span><span class="o">=</span><span class="s1">&#39;bus_type&#39;</span><span class="p">,</span>
+        <span class="n">write_only</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Bus</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;registration_number&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;is_active&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;bus_type&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;bus_type_id&#39;</span>
+        <span class="p">)</span>
+
+<span class="c1"># Маршрут</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">RouteSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Route</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;__all__&#39;</span>
+
+
+
+<span class="c1"># Рабочая сменя</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">WorkShiftSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="o">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+    <span class="n">driver</span> <span class="o">=</span> <span class="n">DriverSerializer</span><span class="p">(</span><span class="n">read_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">bus</span> <span class="o">=</span> <span class="n">BusSerializer</span><span class="p">(</span><span class="n">read_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">route</span> <span class="o">=</span> <span class="n">RouteSerializer</span><span class="p">(</span><span class="n">read_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">driver_id</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">PrimaryKeyRelatedField</span><span class="p">(</span>
+        <span class="n">queryset</span><span class="o">=</span><span class="n">Driver</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span>
+        <span class="n">source</span><span class="o">=</span><span class="s1">&#39;driver&#39;</span><span class="p">,</span>
+        <span class="n">write_only</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">bus_id</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">PrimaryKeyRelatedField</span><span class="p">(</span>
+        <span class="n">queryset</span><span class="o">=</span><span class="n">Bus</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span>
+        <span class="n">source</span><span class="o">=</span><span class="s1">&#39;bus&#39;</span><span class="p">,</span>
+        <span class="n">write_only</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">route_id</span> <span class="o">=</span> <span class="n">serializers</span><span class="o">.</span><span class="n">PrimaryKeyRelatedField</span><span class="p">(</span>
+        <span class="n">queryset</span><span class="o">=</span><span class="n">Route</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span>
+        <span class="n">source</span><span class="o">=</span><span class="s1">&#39;route&#39;</span><span class="p">,</span>
+        <span class="n">write_only</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">WorkShift</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;date&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;start_time&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;end_time&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;absence_reason&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;driver&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;driver_id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;bus&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;bus_id&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;route&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;route_id&#39;</span>
+        <span class="p">)</span>
+</code></pre></div>
+
+<p>Далее были написаны представления: <em>views.py</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework.viewsets</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelViewSet</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework.decorators</span><span class="w"> </span><span class="kn">import</span> <span class="n">action</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.utils.dateparse</span><span class="w"> </span><span class="kn">import</span> <span class="n">parse_date</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.db.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Count</span><span class="p">,</span> <span class="n">Sum</span><span class="p">,</span> <span class="n">Avg</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">DriverClass</span><span class="p">,</span> <span class="n">Driver</span><span class="p">,</span> <span class="n">BusType</span><span class="p">,</span> <span class="n">Bus</span><span class="p">,</span> <span class="n">Route</span><span class="p">,</span> <span class="n">WorkShift</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.serializers</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DriverClassSerializer</span><span class="p">,</span> <span class="n">DriverSerializer</span><span class="p">,</span>
+    <span class="n">BusTypeSerializer</span><span class="p">,</span> <span class="n">BusSerializer</span><span class="p">,</span>
+    <span class="n">RouteSerializer</span><span class="p">,</span> <span class="n">WorkShiftSerializer</span>
+<span class="p">)</span>
+
+<span class="c1"># Классы водителей</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DriverClassViewSet</span><span class="p">(</span><span class="n">ModelViewSet</span><span class="p">):</span>
+    <span class="n">queryset</span> <span class="o">=</span> <span class="n">DriverClass</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">DriverClassSerializer</span>
+
+    <span class="nd">@action</span><span class="p">(</span><span class="n">detail</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;get&#39;</span><span class="p">])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">statistics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Количество водителей по классам</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">stats</span> <span class="o">=</span> <span class="n">Driver</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s1">&#39;driver_class__name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="n">Count</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">stats</span><span class="p">)</span>
+
+<span class="c1"># Водители</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DriverViewSet</span><span class="p">(</span><span class="n">ModelViewSet</span><span class="p">):</span>
+    <span class="n">queryset</span> <span class="o">=</span> <span class="n">Driver</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s1">&#39;driver_class&#39;</span><span class="p">)</span>
+    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">DriverSerializer</span>
+
+<span class="c1"># Типы автобусов</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">BusTypeViewSet</span><span class="p">(</span><span class="n">ModelViewSet</span><span class="p">):</span>
+    <span class="n">queryset</span> <span class="o">=</span> <span class="n">BusType</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">BusTypeSerializer</span>
+
+    <span class="nd">@action</span><span class="p">(</span><span class="n">detail</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;get&#39;</span><span class="p">])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Отчет по автопарку, сгруппированный по типам автобусов</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">report</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">bus_type</span> <span class="ow">in</span> <span class="n">BusType</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+            <span class="n">buses</span> <span class="o">=</span> <span class="n">Bus</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">bus_type</span><span class="o">=</span><span class="n">bus_type</span><span class="p">)</span>
+            <span class="n">routes</span> <span class="o">=</span> <span class="n">Route</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">workshift__bus__in</span><span class="o">=</span><span class="n">buses</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+            <span class="n">drivers</span> <span class="o">=</span> <span class="n">Driver</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">workshift__bus__in</span><span class="o">=</span><span class="n">buses</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+
+            <span class="n">report</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s2">&quot;bus_type&quot;</span><span class="p">:</span> <span class="n">bus_type</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="s2">&quot;bus_count&quot;</span><span class="p">:</span> <span class="n">buses</span><span class="o">.</span><span class="n">count</span><span class="p">(),</span>
+                <span class="s2">&quot;routes&quot;</span><span class="p">:</span> <span class="n">RouteSerializer</span><span class="p">(</span><span class="n">routes</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+                <span class="s2">&quot;drivers&quot;</span><span class="p">:</span> <span class="n">DriverSerializer</span><span class="p">(</span><span class="n">drivers</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+                <span class="s2">&quot;total_route_duration&quot;</span><span class="p">:</span> <span class="n">routes</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="n">Sum</span><span class="p">(</span><span class="s1">&#39;duration_minutes&#39;</span><span class="p">))[</span><span class="s1">&#39;total&#39;</span><span class="p">],</span>
+                <span class="s2">&quot;drivers_avg_experience&quot;</span><span class="p">:</span> <span class="n">drivers</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">avg</span><span class="o">=</span><span class="n">Avg</span><span class="p">(</span><span class="s1">&#39;experience_years&#39;</span><span class="p">))[</span><span class="s1">&#39;avg&#39;</span><span class="p">],</span>
+            <span class="p">})</span>
+
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+<span class="c1"># Автобусы</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">BusViewSet</span><span class="p">(</span><span class="n">ModelViewSet</span><span class="p">):</span>
+    <span class="n">queryset</span> <span class="o">=</span> <span class="n">Bus</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s1">&#39;bus_type&#39;</span><span class="p">)</span>
+    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">BusSerializer</span>
+
+<span class="c1"># Маршруты</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">RouteViewSet</span><span class="p">(</span><span class="n">ModelViewSet</span><span class="p">):</span>
+    <span class="n">queryset</span> <span class="o">=</span> <span class="n">Route</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">RouteSerializer</span>
+
+    <span class="nd">@action</span><span class="p">(</span><span class="n">detail</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;get&#39;</span><span class="p">])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">drivers_schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Список водителей на маршруте с графиком работы</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">shifts</span> <span class="o">=</span> <span class="n">WorkShift</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">route_id</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s1">&#39;driver&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">([</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;driver&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">last_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">driver</span><span class="o">.</span><span class="n">first_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">date</span><span class="p">,</span>
+                <span class="s2">&quot;start_time&quot;</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span>
+                <span class="s2">&quot;end_time&quot;</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">end_time</span>
+            <span class="p">}</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">shifts</span>
+        <span class="p">])</span>
+
+    <span class="nd">@action</span><span class="p">(</span><span class="n">detail</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;get&#39;</span><span class="p">])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">schedule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Время начала и окончания конкретного маршрута</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">route</span> <span class="o">=</span> <span class="n">Route</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">Route</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Маршрут не найден&quot;</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">404</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">Response</span><span class="p">({</span>
+            <span class="s2">&quot;route&quot;</span><span class="p">:</span> <span class="n">route</span><span class="o">.</span><span class="n">number</span><span class="p">,</span>
+            <span class="s2">&quot;start_time&quot;</span><span class="p">:</span> <span class="n">route</span><span class="o">.</span><span class="n">start_time</span><span class="p">,</span>
+            <span class="s2">&quot;end_time&quot;</span><span class="p">:</span> <span class="n">route</span><span class="o">.</span><span class="n">end_time</span>
+        <span class="p">})</span>
+
+    <span class="nd">@action</span><span class="p">(</span><span class="n">detail</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;get&#39;</span><span class="p">])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">total_duration</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Общая протяженность всех маршрутов</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="n">Route</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">total_minutes</span><span class="o">=</span><span class="n">Sum</span><span class="p">(</span><span class="s1">&#39;duration_minutes&#39;</span><span class="p">))[</span><span class="s1">&#39;total_minutes&#39;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;total_duration_minutes&quot;</span><span class="p">:</span> <span class="n">total</span><span class="p">})</span>
+
+<span class="c1"># График работы водителей (смены)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">WorkShiftViewSet</span><span class="p">(</span><span class="n">ModelViewSet</span><span class="p">):</span>
+    <span class="n">queryset</span> <span class="o">=</span> <span class="n">WorkShift</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s1">&#39;driver&#39;</span><span class="p">,</span> <span class="s1">&#39;bus&#39;</span><span class="p">,</span> <span class="s1">&#39;route&#39;</span><span class="p">)</span>
+    <span class="n">serializer_class</span> <span class="o">=</span> <span class="n">WorkShiftSerializer</span>
+
+    <span class="nd">@action</span><span class="p">(</span><span class="n">detail</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;get&#39;</span><span class="p">])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">missed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Автобусы, не вышедшие на линию в заданный день</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">date_str</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">query_params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">date_str</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Укажите date=YYYY-MM-DD&quot;</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+
+        <span class="n">date</span> <span class="o">=</span> <span class="n">parse_date</span><span class="p">(</span><span class="n">date_str</span><span class="p">)</span>
+        <span class="n">shifts</span> <span class="o">=</span> <span class="n">WorkShift</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">date</span><span class="p">,</span> <span class="n">absence_reason__isnull</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s1">&#39;bus&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">([</span>
+            <span class="p">{</span><span class="s2">&quot;bus&quot;</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">bus</span><span class="o">.</span><span class="n">registration_number</span><span class="p">,</span> <span class="s2">&quot;reason&quot;</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">absence_reason</span><span class="p">}</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">shifts</span>
+        <span class="p">])</span>
+</code></pre></div>
+
+<p>Был использован декоратор <em>@action</em>, чтобы проще создавать кастомные эндпоинты</p>
+<p>Затем были созданы пути <em>urls.py</em>:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">path</span><span class="p">,</span> <span class="n">include</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework.routers</span><span class="w"> </span><span class="kn">import</span> <span class="n">DefaultRouter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework_simplejwt.views</span><span class="w"> </span><span class="kn">import</span> <span class="n">TokenObtainPairView</span><span class="p">,</span> <span class="n">TokenRefreshView</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.views</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DriverClassViewSet</span><span class="p">,</span>
+    <span class="n">DriverViewSet</span><span class="p">,</span>
+    <span class="n">BusTypeViewSet</span><span class="p">,</span>
+    <span class="n">BusViewSet</span><span class="p">,</span>
+    <span class="n">RouteViewSet</span><span class="p">,</span>
+    <span class="n">WorkShiftViewSet</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">router</span> <span class="o">=</span> <span class="n">DefaultRouter</span><span class="p">()</span>
+<span class="n">router</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;driverclasses&#39;</span><span class="p">,</span> <span class="n">DriverClassViewSet</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="s1">&#39;driverclass&#39;</span><span class="p">)</span>
+<span class="n">router</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;drivers&#39;</span><span class="p">,</span> <span class="n">DriverViewSet</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="s1">&#39;driver&#39;</span><span class="p">)</span>
+<span class="n">router</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;bus-types&#39;</span><span class="p">,</span> <span class="n">BusTypeViewSet</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="s1">&#39;bus-type&#39;</span><span class="p">)</span>
+<span class="n">router</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;buses&#39;</span><span class="p">,</span> <span class="n">BusViewSet</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="s1">&#39;bus&#39;</span><span class="p">)</span>
+<span class="n">router</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;routes&#39;</span><span class="p">,</span> <span class="n">RouteViewSet</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="s1">&#39;route&#39;</span><span class="p">)</span>
+<span class="n">router</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;workshifts&#39;</span><span class="p">,</span> <span class="n">WorkShiftViewSet</span><span class="p">,</span> <span class="n">basename</span><span class="o">=</span><span class="s1">&#39;workshift&#39;</span><span class="p">)</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;token/&#39;</span><span class="p">,</span> <span class="n">TokenObtainPairView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;token_obtain_pair&#39;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;token/refresh/&#39;</span><span class="p">,</span> <span class="n">TokenRefreshView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;token_refresh&#39;</span><span class="p">),</span>
+
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;auth/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;djoser.urls&#39;</span><span class="p">)),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;auth/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;djoser.urls.jwt&#39;</span><span class="p">)),</span>
+
+
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">router</span><span class="o">.</span><span class="n">urls</span><span class="p">)),</span>
+<span class="p">]</span>
+</code></pre></div>
+
+<p>После всего я прикрутил djoser с JWT авторизацией в <em>settings.py</em>: </p>
+<div class="codehilite"><pre><span></span><code><span class="n">REST_FRAMEWORK</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;DEFAULT_AUTHENTICATION_CLASSES&#39;</span><span class="p">:</span> <span class="p">(</span>
+        <span class="s1">&#39;rest_framework_simplejwt.authentication.JWTAuthentication&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;rest_framework.authentication.SessionAuthentication&#39;</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;DEFAULT_PERMISSION_CLASSES&#39;</span><span class="p">:</span> <span class="p">(</span>
+        <span class="s1">&#39;rest_framework.permissions.IsAuthenticated&#39;</span><span class="p">,</span>
+    <span class="p">),</span>
+<span class="p">}</span>
+
+<span class="n">SIMPLE_JWT</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;ACCESS_TOKEN_LIFETIME&#39;</span><span class="p">:</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">15</span><span class="p">),</span>
+    <span class="s1">&#39;REFRESH_TOKEN_LIFETIME&#39;</span><span class="p">:</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+    <span class="s1">&#39;AUTH_HEADER_TYPES&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;Bearer&#39;</span><span class="p">,),</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>и добавил в <em>urls.py</em></p>
+<div class="codehilite"><pre><span></span><code>urlpatterns = [
+    path(&#39;token/&#39;, TokenObtainPairView.as_view(), name=&#39;token_obtain_pair&#39;),
+    path(&#39;token/refresh/&#39;, TokenRefreshView.as_view(), name=&#39;token_refresh&#39;),
+
+    path(&#39;auth/&#39;, include(&#39;djoser.urls&#39;)),
+    path(&#39;auth/&#39;, include(&#39;djoser.urls.jwt&#39;)),
+
+
+    path(&#39;&#39;, include(router.urls)),
+]
+</code></pre></div>
+
+<p>После этого пришло время запускаться:</p>
+<p><img alt="img_1.png" src="../screenshots/img_1.png" /></p>
+<p>Изначально появилась 401 ошибка: я забыл создать суперюзера, но это показало, что токены авторизации работают</p>
+<p>После добавления суперюзера, я получил JWT токен</p>
+<p><img alt="img_2.png" src="../screenshots/img_2.png" /></p>
+<p>Далее я проверил все кастомные эндпоинты и несколько обычных:</p>
+<h5 id="drivers">Водители (Drivers)<a class="headerlink" href="#drivers" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>URL</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/api/drivers/</code></td>
+<td>Получить список всех водителей</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/drivers/</code></td>
+<td>Создать нового водителя</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/drivers/&lt;id&gt;/</code></td>
+<td>Получить данные конкретного водителя</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>/api/drivers/&lt;id&gt;/</code></td>
+<td>Полностью обновить данные водителя</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td><code>/api/drivers/&lt;id&gt;/</code></td>
+<td>Частично обновить данные водителя</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/api/drivers/&lt;id&gt;/</code></td>
+<td>Удалить водителя</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="img_3.png" src="../screenshots/img_3.png" /></p>
+<hr />
+<h5 id="driver-classes">Классы водителей (Driver Classes)<a class="headerlink" href="#driver-classes" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>URL</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/api/driverclasses/</code></td>
+<td>Получить список всех классов водителей</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/driverclasses/</code></td>
+<td>Создать новый класс водителей</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/driverclasses/&lt;id&gt;/</code></td>
+<td>Получить данные конкретного класса водителей</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/driverclasses/statistics/</code></td>
+<td>Количество водителей в каждом классе</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="img_11.png" src="../screenshots/img_11.png" />
+<img alt="img_9.png" src="../screenshots/img_9.png" /></p>
+<hr />
+<h5 id="bus-types">Типы автобусов (Bus Types)<a class="headerlink" href="#bus-types" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>URL</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/api/bustypes/</code></td>
+<td>Получить список всех типов автобусов</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/bustypes/</code></td>
+<td>Создать новый тип автобуса</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/bustypes/&lt;id&gt;/</code></td>
+<td>Получить данные конкретного типа автобуса</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/bustypes/report/</code></td>
+<td>Отчёт по автопарку, сгруппированный по типам автобусов, с информацией о маршрутах, водителях, суммарной протяжённости маршрутов и среднем стаже водителей</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="img_10.png" src="../screenshots/img_10.png" /></p>
+<hr />
+<h5 id="buses">Автобусы (Buses)<a class="headerlink" href="#buses" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>URL</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/api/buses/</code></td>
+<td>Получить список всех автобусов</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/buses/</code></td>
+<td>Создать новый автобус</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/buses/&lt;id&gt;/</code></td>
+<td>Получить данные конкретного автобуса</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="img_12.png" src="../screenshots/img_12.png" /></p>
+<hr />
+<h5 id="routes">Маршруты (Routes)<a class="headerlink" href="#routes" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>URL</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/api/routes/</code></td>
+<td>Получить список всех маршрутов</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/routes/</code></td>
+<td>Создать новый маршрут</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/routes/&lt;id&gt;/</code></td>
+<td>Получить данные конкретного маршрута</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/routes/&lt;id&gt;/drivers_schedule/</code></td>
+<td>Список водителей, работающих на маршруте, с графиком работы</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/routes/&lt;id&gt;/schedule/</code></td>
+<td>Время начала и окончания движения автобусов на конкретном маршруте</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/routes/total_duration/</code></td>
+<td>Общая протяжённость всех маршрутов</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="img_4.png" src="../screenshots/img_4.png" />
+<img alt="img_5.png" src="../screenshots/img_5.png" />
+<img alt="img_6.png" src="../screenshots/img_6.png" />
+<img alt="img_7.png" src="../screenshots/img_7.png" /></p>
+<hr />
+<h5 id="work-shifts">Смены водителей (Work Shifts)<a class="headerlink" href="#work-shifts" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>URL</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/api/workshifts/</code></td>
+<td>Получить список всех смен водителей</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/workshifts/</code></td>
+<td>Создать новую смену</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/workshifts/&lt;id&gt;/</code></td>
+<td>Получить данные конкретной смены</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/workshifts/missed/?date=YYYY-MM-DD</code></td>
+<td>Автобусы, не вышедшие на линию в указанный день, с указанием причины отсутствия</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="img_8.png" src="../screenshots/img_8.png" /></p>
+<hr />
+<h3 id="_3">Долг по литкоду<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Remove Duplicates from Sorted Array (https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/727/)</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">removeDuplicates</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">lastUnique</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">nums</span><span class="o">[</span><span class="n">lastUnique</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">lastUnique</span><span class="o">++</span><span class="p">;</span>
+<span class="w">                </span><span class="n">nums</span><span class="o">[</span><span class="n">lastUnique</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">lastUnique</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><img alt="img_14.png" src="../screenshots/img_14.png" /></p>
+<ol>
+<li>Reverse String (https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/879/)</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">reverseString</span><span class="p">(</span><span class="kt">char</span><span class="o">[]</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">char</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<span class="w">            </span><span class="n">s</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+<span class="w">            </span><span class="n">s</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><img alt="img_13.png" src="../screenshots/img_13.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.sections", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
