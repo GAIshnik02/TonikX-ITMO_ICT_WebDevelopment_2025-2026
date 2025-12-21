@@ -4,12 +4,56 @@ from rest_framework.response import Response
 from django.utils.dateparse import parse_date
 from django.db.models import Count, Sum, Avg
 
-from .models import DriverClass, Driver, BusType, Bus, Route, WorkShift
+from .models import DriverClass, Driver, BusType, Bus, Route, WorkShift, BusDepot
 from .serializers import (
     DriverClassSerializer, DriverSerializer,
     BusTypeSerializer, BusSerializer,
-    RouteSerializer, WorkShiftSerializer
+    RouteSerializer, WorkShiftSerializer, BusDepotSerializer
 )
+
+
+class BusDepotViewSet(ModelViewSet):
+    queryset = BusDepot.objects.all()
+    serializer_class = BusDepotSerializer
+
+    @action(detail=True, methods=['get'])
+    def statistics(self, request, pk=None):
+        """Статистика по автопарку"""
+        depot = self.get_object()
+
+        stats = {
+            'depot': depot.name,
+            'capacity': depot.capacity,
+            'current_occupancy': depot.current_occupancy,
+            'free_spaces': depot.free_spaces,
+            'active_buses': depot.buses.filter(is_active=True).count(),
+            'inactive_buses': depot.buses.filter(is_active=False).count(),
+        }
+
+        return Response(stats)
+
+    @action(detail=False, methods=['get'])
+    def summary(self, request):
+        """Сводная информация по всем автопаркам"""
+        depots = BusDepot.objects.all()
+        summary_data = []
+
+        for depot in depots:
+            summary_data.append({
+                'id': depot.id,
+                'name': depot.name,
+                'address': depot.address,
+                'capacity': depot.capacity,
+                'occupancy': depot.current_occupancy,
+                'occupancy_percentage': (
+                    (depot.current_occupancy / depot.capacity * 100)
+                    if depot.capacity > 0 else 0
+                ),
+                'active_buses': depot.buses.filter(is_active=True).count(),
+            })
+
+        return Response(summary_data)
+
 
 # Классы водителей
 class DriverClassViewSet(ModelViewSet):

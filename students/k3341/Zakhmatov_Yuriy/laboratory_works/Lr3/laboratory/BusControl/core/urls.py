@@ -8,10 +8,11 @@ from .views import (
     BusTypeViewSet,
     BusViewSet,
     RouteViewSet,
-    WorkShiftViewSet,
+    WorkShiftViewSet, BusDepotViewSet,
 )
 
 router = DefaultRouter()
+router.register(r'depots', BusDepotViewSet, basename='depot')
 router.register(r'driverclasses', DriverClassViewSet, basename='driverclass')
 router.register(r'drivers', DriverViewSet, basename='driver')
 router.register(r'bus-types', BusTypeViewSet, basename='bus-type')

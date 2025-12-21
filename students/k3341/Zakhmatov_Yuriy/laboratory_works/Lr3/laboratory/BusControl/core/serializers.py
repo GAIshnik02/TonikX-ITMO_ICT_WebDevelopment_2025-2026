@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import (
     DriverClass, Driver,
     BusType, Bus,
-    Route, WorkShift
+    Route, WorkShift, BusDepot
 )
 
 # Класс водителя
@@ -45,6 +45,15 @@ class BusTypeSerializer(serializers.ModelSerializer):
         model = BusType
         fields = '__all__'
 
+class BusDepotSerializer(serializers.ModelSerializer):
+    current_occupancy = serializers.IntegerField(read_only=True)
+    free_spaces = serializers.IntegerField(read_only=True)
+
+    class Meta:
+        model = BusDepot
+        fields = '__all__'
+        read_only_fields = ['current_occupancy', 'free_spaces']
+
 # Автобусы
 class BusSerializer(serializers.ModelSerializer):
     bus_type = BusTypeSerializer(read_only=True)
@@ -54,6 +63,15 @@ class BusSerializer(serializers.ModelSerializer):
         write_only=True
     )
 
+    depot = BusDepotSerializer(read_only=True)
+    depot_id = serializers.PrimaryKeyRelatedField(
+        queryset=BusDepot.objects.all(),
+        source='depot',
+        write_only=True,
+        required=False,
+        allow_null=True
+    )
+
     class Meta:
         model = Bus
         fields = (
@@ -61,7 +79,9 @@ class BusSerializer(serializers.ModelSerializer):
             'registration_number',
             'is_active',
             'bus_type',
-            'bus_type_id'
+            'bus_type_id',
+            'depot',
+            'depot_id',
         )
 
 # Маршрут
