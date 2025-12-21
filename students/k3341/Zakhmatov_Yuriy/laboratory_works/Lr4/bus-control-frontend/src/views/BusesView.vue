@@ -684,68 +684,50 @@ export default {
     const fetchDepots = async () => {
       loadingDepots.value = true
       try {
-        // Если есть endpoint для списка депо:
-        // const response = await apiClient.get('depots/')
+        try {
+          const response = await apiClient.get('depots/')
+          depots.value = response.data || []
 
-        // Если нужно получать по одному (пример для 3 депо):
-        const depotIds = [1, 2, 3]
-        const depotPromises = depotIds.map(id =>
-          apiClient.get(`depots/${id}/`).catch(() => null)
-        )
+          // Обогащаем депо статистикой
+          const depotsWithStats = await Promise.all(
+            depots.value.map(async (depot) => {
+              try {
+                // Получаем статистику для каждого депо
+                const statsResponse = await apiClient.get(`depots/${depot.id}/statistics/`)
+                const stats = statsResponse.data
 
-        const results = await Promise.all(depotPromises)
-        depots.value = results.filter(r => r !== null).map(r => r.data)
+                return {
+                  ...depot,
+                  capacity: stats.capacity || depot.capacity || 0,
+                  current_occupancy: stats.current_occupancy || 0,
+                  free_spaces: stats.free_spaces || 0,
+                  active_buses: stats.active_buses || 0,
+                  inactive_buses: stats.inactive_buses || 0
+                }
+              } catch (statsError) {
+                console.warn(`Не удалось загрузить статистику для депо ${depot.id}:`, statsError)
+                // Возвращаем депо без статистики
+                return {
+                  ...depot,
+                  capacity: depot.capacity || 0,
+                  current_occupancy: 0,
+                  free_spaces: depot.capacity || 0,
+                  active_buses: 0,
+                  inactive_buses: 0
+                }
+              }
+            })
+          )
 
-        // Если API не работает, создаем тестовые данные
-        if (depots.value.length === 0) {
-          depots.value = [
-            {
-              id: 1,
-              name: 'Третий',
-              address: 'Спб, Крестовский проспект, д. 1',
-              phone: '+7(981)148-91-98',
-              email: 'depot3@mail.com',
-              capacity: 20,
-              current_occupancy: 5,
-              free_spaces: 15
-            },
-            {
-              id: 2,
-              name: 'Первый',
-              address: 'Спб, Невский проспект, д. 10',
-              phone: '+7(981)111-11-11',
-              email: 'depot1@mail.com',
-              capacity: 15,
-              current_occupancy: 10,
-              free_spaces: 5
-            },
-            {
-              id: 3,
-              name: 'Второй',
-              address: 'Спб, Лиговский проспект, д. 25',
-              phone: '+7(981)222-22-22',
-              email: 'depot2@mail.com',
-              capacity: 25,
-              current_occupancy: 15,
-              free_spaces: 10
-            }
-          ]
+          depots.value = depotsWithStats
+          console.log('✅ Загружены депо:', depots.value)
+
+        } catch (apiError) {
+          console.warn('Не удалось загрузить депо через API:', apiError)
         }
+
       } catch (error) {
-        console.error('Ошибка загрузки депо:', error)
-        // Создаем тестовые данные если API не работает
-        depots.value = [
-          {
-            id: 1,
-            name: 'Главное депо',
-            address: 'Спб, Крестовский проспект, д. 1',
-            phone: '+7(981)148-91-98',
-            email: 'depot@mail.com',
-            capacity: 20,
-            current_occupancy: 0,
-            free_spaces: 20
-          }
-        ]
+        console.error('Общая ошибка загрузки депо:', error)
       } finally {
         loadingDepots.value = false
       }

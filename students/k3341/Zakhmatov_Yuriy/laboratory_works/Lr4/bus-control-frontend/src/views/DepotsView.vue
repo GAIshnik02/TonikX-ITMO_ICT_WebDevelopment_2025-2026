@@ -425,339 +425,384 @@
 </template>
 
 <script>
-import { ref, computed, onMounted, reactive } from 'vue'
-import apiClient from '@/api/axios'
+  import {ref, computed, onMounted, reactive} from 'vue'
+  import apiClient from '@/api/axios'
 
-export default {
+  export default {
   setup() {
-    // Состояние
-    const depots = ref([])
-    const loading = ref(false)
-    const saving = ref(false)
-    const deleting = ref(false)
-    const dialog = ref(false)
-    const deleteDialog = ref(false)
-    const viewDialog = ref(false)
-    const editMode = ref(false)
-    const search = ref('')
+  // Состояние
+  const depots = ref([])
+  const loading = ref(false)
+  const saving = ref(false)
+  const deleting = ref(false)
+  const dialog = ref(false)
+  const deleteDialog = ref(false)
+  const viewDialog = ref(false)
+  const editMode = ref(false)
+  const search = ref('')
 
-    // Локальная форма
-    const localForm = reactive({
-      id: null,
-      name: '',
-      address: '',
-      capacity: 20,
-      phone: '',
-      email: ''
-    })
+  // Локальная форма
+  const localForm = reactive({
+  id: null,
+  name: '',
+  address: '',
+  capacity: 20,
+  phone: '',
+  email: ''
+})
 
-    // Для удаления и просмотра
-    const depotToDelete = ref(null)
-    const viewingDepot = ref(null)
+  // Для удаления и просмотра
+  const depotToDelete = ref(null)
+  const viewingDepot = ref(null)
 
-    // Уведомления
-    const snackbar = reactive({
-      show: false,
-      message: '',
-      color: 'success'
-    })
+  // Уведомления
+  const snackbar = reactive({
+  show: false,
+  message: '',
+  color: 'success'
+})
 
-    // Вычисляемые свойства
-    const filteredDepots = computed(() => {
-      if (!search.value) return depots.value
+  // Вспомогательные функции
+  const calculateOccupancyPercentage = (depot) => {
+  if (!depot || !depot.capacity || depot.capacity === 0) return 0
+  const occupancy = depot.current_occupancy || 0
+  return (occupancy / depot.capacity) * 100
+}
 
-      const searchLower = search.value.toLowerCase()
-      return depots.value.filter(depot =>
-        depot.name.toLowerCase().includes(searchLower) ||
-        depot.address.toLowerCase().includes(searchLower) ||
-        depot.phone?.toLowerCase().includes(searchLower) ||
-        depot.email?.toLowerCase().includes(searchLower)
-      )
-    })
+  const calculateFreeSpaces = (depot) => {
+  if (!depot || !depot.capacity) return 0
+  const occupancy = depot.current_occupancy || 0
+  return Math.max(0, depot.capacity - occupancy)
+}
 
-    // Вспомогательные функции
-    const calculateOccupancyPercentage = (depot) => {
-      if (!depot || !depot.capacity || depot.capacity === 0) return 0
-      const occupancy = depot.current_occupancy || 0
-      return (occupancy / depot.capacity) * 100
-    }
+  const getOccupancyColor = (depot) => {
+  const percentage = calculateOccupancyPercentage(depot)
+  if (percentage < 50) return 'green'
+  if (percentage < 80) return 'orange'
+  return 'red'
+}
 
-    const calculateFreeSpaces = (depot) => {
-      if (!depot || !depot.capacity) return 0
-      const occupancy = depot.current_occupancy || 0
-      return depot.capacity - occupancy
-    }
+  const getDepotStatusColor = (depot) => {
+  const percentage = calculateOccupancyPercentage(depot)
+  if (percentage === 0) return 'grey'
+  if (percentage < 50) return 'green'
+  if (percentage < 80) return 'blue'
+  if (percentage < 95) return 'orange'
+  return 'red'
+}
 
-    const getOccupancyColor = (depot) => {
-      const percentage = calculateOccupancyPercentage(depot)
-      if (percentage < 50) return 'green'
-      if (percentage < 80) return 'orange'
-      return 'red'
-    }
+  const getDepotStatus = (depot) => {
+  const percentage = calculateOccupancyPercentage(depot)
+  if (percentage === 0) return 'Пустое'
+  if (percentage < 50) return 'Мало загружено'
+  if (percentage < 80) return 'Средняя загрузка'
+  if (percentage < 95) return 'Почти заполнено'
+  return 'Переполнено'
+}
 
-    const getDepotStatusColor = (depot) => {
-      const percentage = calculateOccupancyPercentage(depot)
-      if (percentage === 0) return 'grey'
-      if (percentage < 50) return 'green'
-      if (percentage < 80) return 'blue'
-      if (percentage < 95) return 'orange'
-      return 'red'
-    }
+  // Вычисляемые свойства
+  const filteredDepots = computed(() => {
+  if (!search.value.trim()) return depots.value
 
-    const getDepotStatus = (depot) => {
-      const percentage = calculateOccupancyPercentage(depot)
-      if (percentage === 0) return 'Пустое'
-      if (percentage < 50) return 'Мало загружено'
-      if (percentage < 80) return 'Средняя загрузка'
-      if (percentage < 95) return 'Почти заполнено'
-      return 'Переполнено'
-    }
+  const searchLower = search.value.toLowerCase().trim()
+  return depots.value.filter(depot =>
+  depot.name?.toLowerCase().includes(searchLower) ||
+  depot.address?.toLowerCase().includes(searchLower) ||
+  depot.phone?.toLowerCase().includes(searchLower) ||
+  depot.email?.toLowerCase().includes(searchLower)
+  )
+})
 
-    const fetchDepotStatistics = async (depotId) => {
-      try {
-        const response = await apiClient.get(`depots/${depotId}/statistics/`)
-        return response.data
-      } catch (error) {
-        console.error(`Ошибка загрузки статистики для депо ${depotId}:`, error)
-        return null
-      }
-    }
+  const fetchDepotStatistics = async (depotId) => {
+  try {
+  const response = await apiClient.get(`depots/${depotId}/statistics/`)
+  console.log(`📊 Статистика для депо ${depotId}:`, response.data)
+  const stats = response.data
 
-    // API функции
-    const fetchDepots = async () => {
-      loading.value = true
-      try {
-        // Пробуем получить список депо через GET /api/depots/
-        const response = await apiClient.get('depots/')
-        const depotList = response.data
+  return {
+  capacity: stats.capacity,
+  current_occupancy: stats.current_occupancy,
+  free_spaces: stats.free_spaces,
+  active_buses: stats.active_buses,
+  inactive_buses: stats.inactive_buses
+}
+} catch (error) {
+  console.warn(`Не удалось загрузить статистику для депо ${depotId}:`, error)
+  return null
+}
+}
 
-        // Если endpoint возвращает список, обогащаем каждый депо статистикой
-        const depotsWithStats = await Promise.all(
-          depotList.map(async (depot) => {
-            try {
-              const stats = await fetchDepotStatistics(depot.id)
-              return {
-                ...depot,
-                ...(stats || {}),
-                free_spaces: stats?.free_spaces || calculateFreeSpaces(depot)
-              }
-            } catch (error) {
-              return {
-                ...depot,
-                free_spaces: calculateFreeSpaces(depot)
-              }
-            }
-          })
-        )
+  // API функции
+  const fetchDepots = async () => {
+  loading.value = true
+  try {
+  // GET запрос за всеми депо
+  const response = await apiClient.get('depots/')
+  const depotList = response.data || []
 
-        depots.value = depotsWithStats
-      } catch (error) {
-        console.error('Ошибка загрузки списка депо:', error)
+  console.log(' Получены депо с сервера:', depotList)
 
-        // Если endpoint /api/depots/ не работает, пробуем загрузить по одному
-        try {
-          console.log('Пробуем загрузить депо по одному...')
-          // Предположим, что у нас есть депо с ID 1
-          const depot1 = await apiClient.get('depots/1/')
-          const stats1 = await fetchDepotStatistics(1)
+  const depotsWithStats = await Promise.all(
+  depotList.map(async (depot) => {
+  try {
+  // Загружаем статистику для каждого депо
+  const stats = await fetchDepotStatistics(depot.id)
 
-          depots.value = [{
-            ...depot1.data,
-            ...(stats1 || {}),
-            free_spaces: stats1?.free_spaces || calculateFreeSpaces(depot1.data)
-          }]
-        } catch (singleError) {
-          console.error('Не удалось загрузить депо:', singleError)
-          // Создаем тестовое депо для демонстрации
-          depots.value = [{
-            id: 1,
-            name: 'Третий',
-            address: 'Спб, Крестовский проспект, д. 1',
-            phone: '+7(981)148-91-98',
-            email: 'depot3@mail.com',
-            capacity: 20,
-            current_occupancy: 1,
-            free_spaces: 19,
-            active_buses: 1,
-            inactive_buses: 0
-          }]
-        }
-      } finally {
-        loading.value = false
-      }
-    }
+  return {
+  ...depot,  // Базовые данные (id, name, address, phone, email)
+  capacity: stats?.capacity || depot.capacity || 0,
+  current_occupancy: stats?.current_occupancy || 0,
+  free_spaces: stats?.free_spaces || calculateFreeSpaces({
+  capacity: depot.capacity,
+  current_occupancy: 0
+}),
+  active_buses: stats?.active_buses || 0,
+  inactive_buses: stats?.inactive_buses || 0
+}
+} catch (error) {
+  console.warn(`Ошибка при обработке депо ${depot.id}:`, error)
+  // Возвращаем депо без статистики
+}
+})
+  )
 
-    // CRUD операции
-    const openCreateDialog = () => {
-      editMode.value = false
-      resetForm()
-      dialog.value = true
-    }
+  depots.value = depotsWithStats
+  console.log('Депо с статистикой:', depots.value)
+} catch (error) {
+    console.error('Ошибка загрузки списка депо:', error)
 
-    const editDepot = (depot) => {
-      editMode.value = true
-      localForm.id = depot.id
-      localForm.name = depot.name || ''
-      localForm.address = depot.address || ''
-      localForm.capacity = depot.capacity || 20
-      localForm.phone = depot.phone || ''
-      localForm.email = depot.email || ''
+  } finally {
+  loading.value = false
+}
+}
 
-      dialog.value = true
-    }
+  // CRUD операции
+  const openCreateDialog = () => {
+  editMode.value = false
+  resetForm()
+  dialog.value = true
+}
 
-    const viewDepot = (depot) => {
-      viewingDepot.value = depot
-      viewDialog.value = true
-    }
+  const editDepot = (depot) => {
+  editMode.value = true
+  Object.assign(localForm, {
+  id: depot.id,
+  name: depot.name || '',
+  address: depot.address || '',
+  capacity: depot.capacity || 20,
+  phone: depot.phone || '',
+  email: depot.email || ''
+})
+  dialog.value = true
+}
 
-    const saveDepot = async () => {
-      // Валидация
-      if (!localForm.name.trim()) {
-        showSnackbar('Введите название депо', 'error')
-        return
-      }
-      if (!localForm.address.trim()) {
-        showSnackbar('Введите адрес депо', 'error')
-        return
-      }
-      if (!localForm.capacity || localForm.capacity <= 0) {
-        showSnackbar('Введите корректную вместимость', 'error')
-        return
-      }
+  const viewDepot = (depot) => {
+  viewingDepot.value = {...depot}
+  viewDialog.value = true
+}
 
-      saving.value = true
-      try {
-        const depotData = {
-          name: localForm.name.trim(),
-          address: localForm.address.trim(),
-          capacity: Number(localForm.capacity),
-          phone: localForm.phone.trim() || null,
-          email: localForm.email.trim() || null
-        }
+  const saveDepot = async () => {
+  // Валидация
+  if (!localForm.name.trim()) {
+  showSnackbar('Введите название депо', 'error')
+  return
+}
+  if (!localForm.address.trim()) {
+  showSnackbar('Введите адрес депо', 'error')
+  return
+}
+  if (!localForm.capacity || localForm.capacity <= 0 || localForm.capacity > 100) {
+  showSnackbar('Введите корректную вместимость (1-100)', 'error')
+  return
+}
 
-        console.log('Отправляемые данные:', depotData)
+  saving.value = true
+  try {
+  // 🔴 ВАЖНО: Проверьте, какой формат данных ожидает бэкенд
+  const depotData = {
+  name: localForm.name.trim(),
+  address: localForm.address.trim(),
+  capacity: Number(localForm.capacity),
+  phone: localForm.phone.trim() || null,  // null может быть проблемой, попробуйте ''
+  email: localForm.email.trim() || null    // null может быть проблемой, попробуйте ''
+}
 
-        if (editMode.value) {
-          // PUT для обновления
-          await apiClient.put(`depots/${localForm.id}/`, depotData)
-          showSnackbar('Депо успешно обновлено', 'success')
-        } else {
-          // POST для создания
-          try {
-            const response = await apiClient.post('depots/', depotData)
-            console.log('Ответ от сервера:', response.data)
-            showSnackbar('Депо успешно создано', 'success')
-          } catch (postError) {
-            console.error('Ошибка POST запроса:', postError)
-            console.error('Данные запроса:', depotData)
-            console.error('Ответ сервера:', postError.response?.data)
-            throw postError
-          }
-        }
+  console.log('📤 Отправляемые данные (JSON):', JSON.stringify(depotData))
 
-        await fetchDepots()
-        closeDialog()
-      } catch (error) {
-        console.error('Ошибка сохранения:', error)
-        const message = error.response?.data?.detail ||
-                       error.response?.data?.name?.[0] ||
-                       error.response?.data ||
-                       'Ошибка сохранения'
-        showSnackbar(message, 'error')
-      } finally {
-        saving.value = false
-      }
-    }
+  if (editMode.value) {
+  // Обновление существующего депо
+  await apiClient.put(`depots/${localForm.id}/`, depotData)
+  showSnackbar('Депо успешно обновлено', 'success')
+} else {
+  // Создание нового депо
+  console.log('🚀 Отправка POST запроса на /depots/')
 
-    const deleteDepot = (depot) => {
-      depotToDelete.value = depot
-      deleteDialog.value = true
-    }
+  // 🔴 ДЕБАГ: Проверим, что именно отправляется
+  console.log('Тип данных:', typeof depotData)
+  console.log('Capacity тип:', typeof depotData.capacity)
 
-    const confirmDelete = async () => {
-      if (!depotToDelete.value) return
+  try {
+  const response = await apiClient.post('depots/', depotData)
+  console.log('✅ Успешный ответ:', response.data)
+  showSnackbar('Депо успешно создано', 'success')
+} catch (postError) {
+  console.error('❌ Ошибка 400 Bad Request:')
 
-      deleting.value = true
-      try {
-        await apiClient.delete(`depots/${depotToDelete.value.id}/`)
+  // 🔴 ВАЖНО: Выводим полные детали ошибки
+  if (postError.response?.data) {
+  console.error('Полный ответ сервера:')
+  console.dir(postError.response.data, {depth: null})
 
-        showSnackbar('Депо успешно удалено', 'success')
-        await fetchDepots()
-      } catch (error) {
-        console.error('Ошибка удаления:', error)
-        showSnackbar('Ошибка удаления', 'error')
-      } finally {
-        deleting.value = false
-        deleteDialog.value = false
-        depotToDelete.value = null
-      }
-    }
+  // Если это Django REST Framework ошибки валидации
+  if (typeof postError.response.data === 'object') {
+  console.error('Ошибки по полям:')
+  for (const [field, errors] of Object.entries(postError.response.data)) {
+  console.error(`  ${field}:`, errors)
+}
+}
+}
 
-    const closeDialog = () => {
-      dialog.value = false
-      resetForm()
-    }
+  throw postError
+}
+}
 
-    const resetForm = () => {
-      localForm.id = null
-      localForm.name = ''
-      localForm.address = ''
-      localForm.capacity = 20
-      localForm.phone = ''
-      localForm.email = ''
-      editMode.value = false
-    }
+  // Обновляем список депо
+  await fetchDepots()
 
-    const showSnackbar = (message, color = 'success') => {
-      snackbar.message = message
-      snackbar.color = color
-      snackbar.show = true
-    }
+  // Закрываем диалог
+  closeDialog()
+} catch (error) {
+  console.error('💥 Итоговая ошибка сохранения:', error)
 
-    // Инициализация
-    onMounted(() => {
-      fetchDepots()
-    })
+  let errorMessage = 'Ошибка сохранения'
 
-    return {
-      // Состояние
-      depots,
-      loading,
-      saving,
-      deleting,
-      dialog,
-      deleteDialog,
-      viewDialog,
-      editMode,
-      search,
-      localForm,
-      depotToDelete,
-      viewingDepot,
-      snackbar,
+  // 🔴 ИСПРАВЛЕНО: Парсим ошибки Django REST Framework
+  if (error.response?.data) {
+  const data = error.response.data
 
-      // Данные
-      filteredDepots,
+  if (typeof data === 'string') {
+  errorMessage = data
+}
+  else if (data.detail) {
+  errorMessage = data.detail
+}
+  else if (typeof data === 'object') {
+  // Обрабатываем ошибки валидации полей
+  const fieldErrors = []
 
-      // Методы
-      fetchDepots,
-      openCreateDialog,
-      editDepot,
-      viewDepot,
-      saveDepot,
-      deleteDepot,
-      confirmDelete,
-      closeDialog,
+  for (const [field, errors] of Object.entries(data)) {
+  if (Array.isArray(errors)) {
+  fieldErrors.push(`${field}: ${errors.join(', ')}`)
+} else if (typeof errors === 'string') {
+  fieldErrors.push(`${field}: ${errors}`)
+}
+}
 
-      // Вспомогательные методы
-      calculateOccupancyPercentage,
-      calculateFreeSpaces,
-      getOccupancyColor,
-      getDepotStatusColor,
-      getDepotStatus,
-      showSnackbar
-    }
-  }
+  if (fieldErrors.length > 0) {
+  errorMessage = fieldErrors.join('; ')
+} else {
+  errorMessage = JSON.stringify(data)
+}
+}
+}
+
+  showSnackbar(errorMessage, 'error')
+} finally {
+  saving.value = false
+}
+}
+
+  const deleteDepot = (depot) => {
+  depotToDelete.value = depot
+  deleteDialog.value = true
+}
+
+  const confirmDelete = async () => {
+  if (!depotToDelete.value) return
+
+  deleting.value = true
+  try {
+  await apiClient.delete(`depots/${depotToDelete.value.id}/`)
+  showSnackbar('Депо успешно удалено', 'success')
+  await fetchDepots()
+} catch (error) {
+  console.error('Ошибка удаления:', error)
+  const errorMessage = error.response?.data?.detail || 'Ошибка удаления'
+  showSnackbar(errorMessage, 'error')
+} finally {
+  deleting.value = false
+  deleteDialog.value = false
+  depotToDelete.value = null
+}
+}
+
+  const closeDialog = () => {
+  dialog.value = false
+  resetForm()
+}
+
+  const resetForm = () => {
+  Object.assign(localForm, {
+  id: null,
+  name: '',
+  address: '',
+  capacity: 20,
+  phone: '',
+  email: ''
+})
+  editMode.value = false
+}
+
+  const showSnackbar = (message, color = 'success') => {
+  snackbar.message = message
+  snackbar.color = color
+  snackbar.show = true
+}
+
+  // Инициализация
+  onMounted(() => {
+  console.log('🚀 Компонент DepotsView инициализирован')
+  fetchDepots()
+})
+
+  return {
+  // Состояние
+  depots,
+  loading,
+  saving,
+  deleting,
+  dialog,
+  deleteDialog,
+  viewDialog,
+  editMode,
+  search,
+  localForm,
+  depotToDelete,
+  viewingDepot,
+  snackbar,
+
+  // Данные
+  filteredDepots,
+
+  // Методы
+  fetchDepots,
+  openCreateDialog,
+  editDepot,
+  viewDepot,
+  saveDepot,
+  deleteDepot,
+  confirmDelete,
+  closeDialog,
+
+  // Вспомогательные методы
+  calculateOccupancyPercentage,
+  calculateFreeSpaces,
+  getOccupancyColor,
+  getDepotStatusColor,
+  getDepotStatus,
+  showSnackbar
+}
+}
 }
 </script>
 
